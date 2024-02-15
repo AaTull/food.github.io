@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant Order Management System</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div id="alert-container"></div>
+  <div class="logo-container">
+    <div class="logo">
+      Hungry<span style="color: #333;">Scan</span>
+    </div>
+  </div>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <section class="top-nav">
+    <div>
+      Logo Here
+    </div>
+    <input id="menu-toggle" type="checkbox" />
+    <label class='menu-button-container' for="menu-toggle">
+      <div class='menu-button'></div>
+    </label>
+
+
+    <ul class="menu">
+      <li>Home</li>
+      <li>Cart</li>
+      <li>Category</li>
+      <li>Menu</li>
+      <li>About</li>
+    </ul>
+  </section>
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search for food...">
+    <button id="searchButton">
+    
+      <i class="fas fa-search"></i>
+
+    </button>
+    </div>
+
+  <div class="image-container">
+    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029856/PC_Creative%20refresh/3D_bau/banners_new/Pizza.png" alt="Image 1">
+    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029845/PC_Creative%20refresh/3D_bau/banners_new/Burger.png" alt="Image 2">
+    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029848/PC_Creative%20refresh/3D_bau/banners_new/Chinese.png" alt="Image 3">
+    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1675667625/PC_Creative%20refresh/Biryani_2.png" alt="'img4">
+    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029860/PC_Creative%20refresh/3D_bau/banners_new/Samosas.png" alt="'img4">
+    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029858/PC_Creative%20refresh/3D_bau/banners_new/Rolls.png" alt="'img4">
+    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029860/PC_Creative%20refresh/3D_bau/banners_new/Sandwich.png" alt="'img4">
+    
+    </div>
+
+
+    <div class="menu-item">
+      <img src="https://as2.ftcdn.net/v2/jpg/06/05/78/11/1000_F_605781113_SBKoB6NcVKHDCZha8Aj1yXLiWUJLdS5T.webp" alt="Burger">
+      <div>
+      <h3>Burger  <img src="https://img.icons8.com/?size=512&id=61082&format=png" hight="10" width="15" alt="veg"></h3>
+      <p>Delicious burger with cheese and veggies.</p>
+      <p>&#8377; 80</p>
+      <button class="order-button" onclick="addToCart('Burger', 80)">Add</button>
+      </div>
+      </div>
+      
+     
+      <div class="menu-item">
+      <img src="https://media.istockphoto.com/id/1288715564/photo/tortilla-wrap-with-vegetables-and-fried-chicken-meat-on-white.jpg?s=612x612&w=0&k=20&c=d6A8zEQn4mnvjHhqYZfgGRLhEFBvQsblCq2OiEsxMpg=" alt="Burger">
+      <div>
+      <h3>Roll <img src="https://img.icons8.com/?size=512&id=61082&format=png" hight="10" width="15" alt="veg"></h3>
+      <p>Egg Rolls</p>
+      <p>&#8377; 160</p>
+      <button class="order-button" onclick="addToCart('Pizza', 160)">Add</button>
+      </div>
+      </div>
+      
+      <div class="menu-item">
+      <img src="https://img.freepik.com/free-photo/hot-tasty-pizza_144627-24383.jpg?size=626&ext=jpg&ga=GA1.2.1479809489.1692002677&semt=ais" alt="Pizza">
+      <div>
+      <h3>Pizza  <img src="https://www.clipartmax.com/png/middle/299-2998556_vegetarian-food-symbol-icon-non-veg-symbol-png.png" height="10" width="15" alt="veg"></h3>
+      <p>Classic pepperoni pizza with a thin crust.</p>
+      <p>&#8377; 110</p>
+      
+      <!-- For the Pizza -->
+      
+      <button class="order-button" onclick="addToCart('Pizza', 110)">Add</button>
+      </div>
+      </div>
+      
+      
+      
+      
+      <div class="menu-item">
+      <img src="https://pngimg.com/uploads/pasta/small/pasta_PNG98609.png" alt="Pasta">
+      <div>
+      <h3>Pasta  <img src="https://www.clipartmax.com/png/middle/299-2998556_vegetarian-food-symbol-icon-non-veg-symbol-png.png" hight="10" width="15" alt="veg"></h3>
+      <p>Creamy Pasta</p>
+      <p>&#8377; 140</p>
+      <!-- For the Pasta -->
+      
+      <button class="order-button" onclick="addToCart('Pasta', 140)">Add</button>
+      </div>
+      </div>
+
+      <div id="cart">
+        <h2> <img src="https://www.seekpng.com/png/full/134-1344280_add-items-to-cart-minimalist-shopping-cart.png" hight="35" width="50" alt="cart"></h2>
+        
+        <ul id="cart-items"></ul>
+       
+        <ul id="cart-items-without-toppings"></ul>
+        <p id="total">Total: Rs0.00</p>
+        </div>
+
+      <div class="bottom-bar">
+        <div>
+           Quantity: <span id="totalQuantity">0</span>
+        </div>
+        <div>
+          Total: &#8377; <span id="totalAmount">0.00</span>
+        </div>
+        <button id="checkoutButton" class="checkout-button">Checkout</button>
+      </div>
+    
+
+  <script src="script.js"></script>
+</body>
+
+</html>
