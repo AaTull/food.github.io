@@ -1,3 +1,36 @@
+const imageContainer = document.querySelector('.image-container');
+const images = document.querySelectorAll('.image-container img');
+
+// Add event listeners for touch events
+imageContainer.addEventListener('touchstart', handleTouchStart, { passive: true });
+imageContainer.addEventListener('touchmove', handleTouchMove, { passive: false });
+
+let initialX;
+let initialScrollLeft;
+
+function handleTouchStart(event) {
+  initialX = event.touches[0].clientX;
+  initialScrollLeft = imageContainer.scrollLeft;
+}
+
+function handleTouchMove(event) {
+  event.preventDefault(); // Prevent default behavior to avoid vertical scrolling
+  const difference = event.touches[0].clientX - initialX;
+  imageContainer.scrollLeft = initialScrollLeft - difference;
+}
+
+// Add click event listener to images
+images.forEach(image => {
+  image.addEventListener('click', () => {
+    const sectionId = image.getAttribute('data-section');
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
+
+
 let cart = [];
 
 function addToCart(itemName, itemPrice) {
@@ -184,3 +217,29 @@ searchInput.addEventListener("input", () => {
 
 
 
+/*script for scrollable counter*/
+
+document.addEventListener("DOMContentLoaded", function() {
+      const prevButton = document.querySelector('.scroll-button.prev');
+      const nextButton = document.querySelector('.scroll-button.next');
+
+      prevButton.addEventListener('click', function() {
+        document.querySelector('.scroll-wrapper').scrollBy({
+          left: -200, 
+          behavior: 'smooth'
+        });
+      });
+
+      nextButton.addEventListener('click', function() {
+        document.querySelector('.scroll-wrapper').scrollBy({
+          left: 200, 
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    function menuOnClick() {
+      document.getElementById("menu-bar").classList.toggle("change");
+      document.getElementById("nav").classList.toggle("change");
+      document.getElementById("menu-bg").classList.toggle("change-bg");
+    }
